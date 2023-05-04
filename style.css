@@ -70,3 +70,7 @@ form button:hover {
   background: rgb(12, 118, 12);
   
 }
+
+.todo-item{
+  padding: 0rem 0.5rem;
+}
