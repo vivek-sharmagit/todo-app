@@ -64,18 +64,38 @@ function deleteCheck(e) {
 
 function filterTodo(e) {
   const todos = todoList.childNodes;
+  // console.log(todos);
+
   todos.forEach(function (todo) {
-    switch (e.target.value) {
-      case "all":
-        todo.style.display = "block";
-        break;
-      case "completed":
-        if (todo.classList.contains("completed")) {
+    if (todo && todo.classList) {
+      switch (e.target.value) {
+        case "all":
           todo.style.display = "flex";
-        } else {
-          todo.style.display = "none";
-        }
-        
+          // console.log("all");
+          break;
+        case "completed":
+          if (todo.classList.contains("completed")) {
+            todo.style.display = "flex";
+            // console.log("completed");
+          } else {
+            todo.style.display = "none";
+          }
+        case "completed":
+          if (todo.classList.contains("completed")) {
+            todo.style.display = "flex";
+            // console.log("completed");
+          } else {
+            todo.style.display = "none";
+          }
+          break;
+        case "uncompleted":
+          if (!todo.classList.contains("completed")) {
+            todo.style.display = "flex";
+          } else {
+            todo.style.display = "none";
+          }
+          break;
+      }
     }
   });
 }
